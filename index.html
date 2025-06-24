@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ash and Bloom Farm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quattrocento&display=swap" rel="stylesheet">
+   <style>
+    :root {
+      --bg-color: #f5f1ea;
+      --text-color: #3e2f1c;
+      --header-bg: #e9dfd1;
+      --main-bg: #fffaf5;
+      --border-color: #d3e0d3;
+      --accent-color: #4b7156; /* Green accent */
+      --nav-link: #4b7156;
+      --nav-hover: #3e2f1c;
+      --footer-bg: #e9dfd1;
+      --footer-text: #6b5843;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #2b241c;
+        --text-color: #f5f1ea;
+        --header-bg: #3a3127;
+        --main-bg: #3e342b;
+        --border-color: #5a685a;
+        --accent-color: #7cc597;
+        --nav-link: #a7d7b2;
+        --nav-hover: #f5f1ea;
+        --footer-bg: #3a3127;
+        --footer-text: #cbbba0;
+      }
+    }
+
+    html, body {
+        height: 100%;
+        font-family: 'Quattrocento', serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        background-image: url('media/watercolor_greatsmokies.jpg');   
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-blend-mode: overlay;
+        display: flex;
+        flex-direction: column;
+    }
+    #page {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    header {
+      background-color: var(--header-bg);
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(60, 40, 20, 0.1);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-title img {
+      height: 100px;
+      margin-right: 0.75rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(60, 40, 20, 0.1);
+    }
+
+    .logo-title h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--accent-color);
+    }
+
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: var(--nav-link);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--nav-hover);
+      text-decoration: underline;
+    }
+
+    main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+    background-color: rgba(255, 250, 245, 0.9); /* semi-transparent */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    /* background-image: url('media/watercolor_greatsmokies.jpg');  Example rustic texture 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+    }
+
+    h2 {
+      color: var(--accent-color);
+    }
+
+    a {
+      color: var(--accent-color);
+    }
+
+    a:hover {
+      color: var(--nav-hover);
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem;
+      background-color: var(--footer-bg);
+      border-top: 1px solid var(--border-color);
+      font-size: 0.9rem;
+      color: var(--footer-text);
+    }
+</style>
+</head>
+<body>
+    <div id="page">
+  <header>
+    <div class="header-content">
+      <div class="logo-title">
+        <img src="media/ashandbloom_logo.jpg" alt="Logo" />
+        <h1>Ash and Bloom Farm</h1>
+      </div>
+      <nav>
+        <a href="#welcome">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#footer">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="welcome">
+        <h2>Welcome</h2>
+        <p>This webpage embraces a warm, rustic aesthetic — ideal for farms, artisan brands, or nature-inspired businesses.</p>
+    </section>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Nestled in Maryville, TN, just 30 minutes south of Knoxville, Ash and Bloom Farm takes pride in offering your horses the best care. In partnership with <a href="https://fierlis.com/" target="_blank">Fierlis Enterprises, LLC</a>, we offer state of the art lodging and round the clock care to all of our lodgers.</p> 
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103617.83881880077!2d-84.07055451492994!3d35.74939235548993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885e9e2269c7638d%3A0xa6914a2ecd5161e0!2sMaryville%2C%20TN!5e0!3m2!1sen!2sus!4v1749141523754!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <section>
+      <h2>Our Services</h2>
+    <list>
+        <li>
+            <strong>Horse Boarding:</strong> We offer spacious and comfortable boarding facilities for your horses, ensuring they feel at home.
+        </li>
+        <li>
+            <strong>Round-the-Clock Care:</strong> Our dedicated team provides 24/7 care, ensuring your horses are always safe and well looked after.
+        </li>
+        <li>
+            <strong>Training Services:</strong> We provide professional training services tailored to the needs of each horse.
+        </li>
+        <li>
+            <strong>Riding Lessons:</strong> Our experienced instructors offer riding lessons for all skill levels, from beginners to advanced riders.
+        </li>
+    </list>
+    </section>
+    <section>
+        <h2>Gallery</h2>
+        <div class="photos">
+            <h3>The Grounds</h3>
+            <p>Featuring freshly restored fences, gentle, sloping green pastures, and <strong>(COMING SOON!)</strong> a dedicated riding arena, the grounds at Ash and Bloom Farm are well maintained and consistently updated to fit the needs of clients.</p>
+            <img src="media/comingsoon_dedicatedridingspace.JPEG" alt="Sun shines brightly over a green pasture with a wooden fence on the left and trees bordering the field. The sunlight creates a warm, tranquil atmosphere, and the landscape feels peaceful and open. No visible text in the image." style="width: 220px; height: auto; border-radius: 8px;">
+            <img src="media/pasture_two.JPEG" alt="Sturdy wooden fence in the foreground with green pasture stretching into the distance under a clear blue sky, surrounded by trees and a peaceful rural landscape, evoking a calm and welcoming atmosphere" style="width: 220px; height: auto; border-radius: 8px;">
+            <img src="media/pasture_one.JPEG" alt="Wooden fence runs diagonally across a gently sloping green pasture with sparse young grass in the foreground, bordered by leafy trees and a red barn in the distance under a clear blue sky. The scene feels peaceful, open, and welcoming, evoking a sense of calm rural tranquility." style="width: 220px; height: auto; border-radius: 8px;">
+            <img src="media/pasture_four.JPEG" alt="Wide green pasture with a wooden fence in the foreground under a clear blue sky, distant trees and a red barn on the horizon, creating a peaceful and open rural atmosphere" style="width: 220px; height: auto; border-radius: 8px;">
+       </div>
+
+        <div class="photos">
+            <h3>More Photos</h3>
+            <img src="media/viewfrombarn.JPEG" alt="Ash and Bloom Farm Logo" style="width: 220px; height: auto; border-radius: 8px;">
+            <img src="media/viewfromhouse.JPEG" alt="Ash and Bloom Farmhouse" style="width: 220px; height: auto; border-radius: 8px;">
+            <img src="media/comingsoon_dedicatedridingspace.JPEG" alt="Horses at Ash and Bloom Farm" style="width: 220px; height: auto; border-radius: 8px;">
+            <img src="media/redbarn.JPEG" alt="Horses at Ash and Bloom Farm" style="width: 220px; height: auto; border-radius: 8px;">
+        </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div>
+        <strong>Contact:</strong> <span>your.email@ashandbloomfarm.com</span> | <span>+1 (555) 123-4567</span>
+    </div>
+    <div>
+        &copy; 2025 Ash and Bloom Farm. All rights reserved.
+    </div>
+  </footer>
+</body>
+</div>
+</html>

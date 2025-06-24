@@ -1,0 +1,254 @@
+    :root {
+        --bg: #ffffff;
+        /* --primary: #d1b9a1; */
+        --primary: #ffffff;
+        --secondary: #ffffff;
+        --accent: #ffffff;
+        --text: #000000;
+        --footer-bg: #ffffff;
+        --footer-text: #000000;
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Montserrat', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+
+    header {
+        background: var(--primary);
+        color: var(--text);
+        padding: 2rem 0 1rem 0;
+        text-align: center;
+    }
+
+    span {
+        font-weight: 600;
+        color: var(--text);
+    }
+
+    main {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    section {
+        margin-bottom: 2.5rem;
+        background: #759c96;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(141, 135, 65, 0.07);
+        padding: 2rem;
+    }
+
+    h1 {
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+    }
+
+    /* Typography */
+    h1 {
+        @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+        font-family: 'Inter', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #2D1674;
+        letter-spacing: 2px;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+        font-family: 'Inter', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #2D1674;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    h3, h4, h5, h6 {
+        @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: 100;
+        color: #2D1674;
+        margin-bottom: 1rem;
+    }
+
+    .testimonials {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .testimonial {
+        background: var(--bg);
+        color: #fff;
+        border-radius: 6px;
+        padding: 1rem 1.5rem;
+        font-style: italic;
+        position: relative;
+    }
+
+    .testimonial::before {
+        content: "“";
+        font-size: 2rem;
+        position: absolute;
+        left: 1rem;
+        top: 0.5rem;
+        color: var(--accent);
+    }
+
+    .testimonial cite {
+        display: block;
+        margin-top: 0.5rem;
+        font-style: normal;
+        font-weight: 700;
+        color: var(--accent);
+        text-align: right;
+    }
+
+    .photos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+    }
+
+    .photos img {
+        width: 100%;
+        border-radius: 6px;
+        object-fit: cover;
+        height: 180px;
+        background: #eae7dc;
+    }
+
+    footer {
+        background: var(--footer-bg);
+        color: var(--footer-text);
+        text-align: center;
+        padding: 1.5rem 0;
+        font-size: 1rem;
+        margin-top: 2rem;
+    }
+
+    /* Navigation styles */
+    nav {
+        background: var(--secondary);
+        color: #fff;
+        padding: 0.5rem 0;
+        text-align: center;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    nav ul li {
+        display: inline;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s;
+    }
+
+    nav a:hover,
+    nav a:focus {
+        color: var(--accent);
+    }
+
+    /* Button styles */
+    .button,
+    button,
+    input[type="submit"] {
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-family: inherit;
+        cursor: pointer;
+        transition: background 0.2s;
+        margin-top: 1rem;
+    }
+
+    .button:hover,
+    button:hover,
+    input[type="submit"]:hover {
+        background: var(--secondary);
+    }
+
+    /* Form styles */
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-family: inherit;
+        background: #f8f8f8;
+        color: var(--text);
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+    }
+
+    /* Utility classes */
+    .text-center {
+        text-align: center;
+    }
+
+    .mt-2 {
+        margin-top: 2rem;
+    }
+
+    .mb-2 {
+        margin-bottom: 2rem;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 600px) {
+        section {
+            padding: 1rem;
+        }
+        .photos img {
+            height: 120px;
+        }
+        nav ul {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        main {
+            padding: 0 0.5rem;
+        }
+    }
