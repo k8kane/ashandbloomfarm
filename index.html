@@ -204,7 +204,102 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.style.overflow = 'hidden';
     });
   });
+  // Enable clicking between photos in modal
+  const allPhotos = Array.from(document.querySelectorAll('.photos img'));
+  let currentIndex = -1;
 
+  function openModalAt(index) {
+    if (index < 0 || index >= allPhotos.length) return;
+    currentIndex = index;
+    modalImg.src = allPhotos[currentIndex].src;
+    modalImg.alt = allPhotos[currentIndex].alt;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  allPhotos.forEach((img, idx) => {
+    img.addEventListener('click', function() {
+      openModalAt(idx);
+    });
+  });
+  // Style arrow buttons and position them beside the modal image
+  const style = document.createElement('style');
+  style.textContent = `
+    .img-modal .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,250,245,0.85);
+      border: none;
+      color: var(--accent-color);
+      font-size: 2.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1002;
+      box-shadow: 0 2px 8px rgba(60,40,20,0.15);
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      user-select: none;
+    }
+    .img-modal .arrow-btn:hover {
+      background: var(--accent-color);
+      color: #fffaf5;
+      box-shadow: 0 4px 16px rgba(60,40,20,0.25);
+    }
+    .img-modal .left-arrow {
+      left: 2vw;
+    }
+    .img-modal .right-arrow {
+      right: 2vw;
+    }
+    @media (max-width: 600px) {
+      .img-modal .arrow-btn {
+        font-size: 2rem;
+        padding: 0.3rem 0.7rem;
+      }
+      .img-modal .left-arrow { left: 1vw; }
+      .img-modal .right-arrow { right: 1vw; }
+    }
+  `;
+  document.head.appendChild(style);
+  // Add left/right arrow buttons to modal
+  const leftArrow = document.createElement('button');
+  leftArrow.className = 'arrow-btn left-arrow';
+  leftArrow.setAttribute('aria-label', 'Previous photo');
+  leftArrow.innerHTML = '&#8592;';
+
+  const rightArrow = document.createElement('button');
+  rightArrow.className = 'arrow-btn right-arrow';
+  rightArrow.setAttribute('aria-label', 'Next photo');
+  rightArrow.innerHTML = '&#8594;';
+
+  modal.appendChild(leftArrow);
+  modal.appendChild(rightArrow);
+
+  leftArrow.addEventListener('click', function(e) {
+    e.stopPropagation();
+    openModalAt((currentIndex - 1 + allPhotos.length) % allPhotos.length);
+  });
+  rightArrow.addEventListener('click', function(e) {
+    e.stopPropagation();
+    openModalAt((currentIndex + 1) % allPhotos.length);
+  });
+
+  // Keyboard navigation (left/right arrows)
+  document.addEventListener('keydown', function(e) {
+    if (!modal.classList.contains('active')) return;
+    if (e.key === 'ArrowRight') {
+      openModalAt((currentIndex + 1) % allPhotos.length);
+    } else if (e.key === 'ArrowLeft') {
+      openModalAt((currentIndex - 1 + allPhotos.length) % allPhotos.length);
+    }
+  });
+
+  // Click modal image to go to next photo
+  modalImg.addEventListener('click', function(e) {
+    e.stopPropagation();
+    openModalAt((currentIndex + 1) % allPhotos.length);
+  });
   // Close modal on button click or overlay click
   closeBtn.addEventListener('click', closeModal);
   modal.addEventListener('click', function(e) {
